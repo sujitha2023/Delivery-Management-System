@@ -3,6 +3,7 @@ Backend Django
 Create python virtual environment -
 
 python -m venv project-name
+
 project-name\Scripts\activate.bat
 
 Move to required Directory -
