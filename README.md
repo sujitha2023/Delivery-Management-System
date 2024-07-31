@@ -9,19 +9,19 @@ Create python virtual environment -
 
 Move to required Directory -
 
--cd service_management
+- cd service_management
 
 Install required packages - 
 
--pip install -r requirements.txt
+- pip install -r requirements.txt
 
 For DB migrations -
 
--python manage.py migrate
+- python manage.py migrate
 
 To Run the Django Application -
 
--python manage.py runserver
+- python manage.py runserver
 
 # Frontend : React + Vite
 
