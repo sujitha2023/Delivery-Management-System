@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Component, Vehicle, Issue
+from .models import Component, Vehicle, Issue,Revenue
 
 class ComponentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,3 +15,8 @@ class IssueSerializer(serializers.ModelSerializer):
     class Meta:
         model = Issue
         fields = '__all__'
+        
+class RevenueSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Revenue
+        fields ='__all__'
