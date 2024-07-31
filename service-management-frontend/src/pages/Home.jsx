@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const headingStyle = {
+    marginLeft:'15rem'
+};
+const ulStyle = {
+    marginLeft:'35rem'
+};
+
 const Home = () => {
     return (
         <div>
-            <h1>Vehicle Service Management System</h1>
+            <h1 style={headingStyle}>Vehicle Service Management System</h1>
             <nav>
-                <ul>
+                <ul style={ulStyle}>
                     <li><Link to="/components">Components</Link></li>
                     <li><Link to="/vehicles">Vehicles</Link></li>
                     <li><Link to="/issues">Issues</Link></li>

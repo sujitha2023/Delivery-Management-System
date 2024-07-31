@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const headingStyle = {
+    marginLeft:'37rem'
+};
+const divStyle={
+   marginTop:'-7rem'
+}
+
+const inputStyle={
+     marginLeft:'36rem',
+     padding:'0.3rem'
+}
+const paraStyle={
+    marginLeft:'36rem',
+    padding:'0.3rem'
+}
+
 const CalculatePrice = () => {
     const [vehicleId, setVehicleId] = useState('');
     const [totalPrice, setTotalPrice] = useState(null);
@@ -18,16 +34,17 @@ const CalculatePrice = () => {
     };
 
     return (
-        <div>
-            <h2>Calculate Final Price</h2>
+        <div style={divStyle}>
+            <h2 style={headingStyle}>Calculate Final Price</h2>
             <input
                 type="text"
                 value={vehicleId}
                 onChange={(e) => setVehicleId(e.target.value)}
                 placeholder="Vehicle ID"
+                style={inputStyle}
             />
             <button onClick={handleCalculate}>Calculate</button>
-            {totalPrice !== null && <p>Total Price: ₹{totalPrice}</p>}
+            {totalPrice !== null && <p style={paraStyle}>Total Price: ₹{totalPrice}</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
     );

@@ -13,16 +13,10 @@ const IssueForm = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const vehiclesResponse = await getVehicles();
-                const componentsResponse = await getComponents();
-                console.log('Vehicles:', vehiclesResponse.data);
-                console.log('Components:', componentsResponse.data);
-                setVehicles(vehiclesResponse.data);
-                setComponents(componentsResponse.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
+            const vehiclesResponse = await getVehicles();
+            const componentsResponse = await getComponents();
+            setVehicles(vehiclesResponse.data);
+            setComponents(componentsResponse.data);
         };
 
         fetchData();
@@ -49,46 +43,74 @@ const IssueForm = () => {
         }
     };
 
+    const formStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        marginTop: '-10rem',
+        marginLeft:"30rem"
+    };
+
+    const inputStyle = {
+        margin: '10px 0',
+        color:'black !important',
+        padding:'0.3rem'
+    };
+
+    const decStyle = {
+        margin: '0px',
+        color:'black !important'
+    };
+    const labelStyle = {
+        padding:'0.3rem'
+
+    };
+
+
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Register Issue</h2>
-            <div>
-                <label>Vehicle:</label>
-                <select value={vehicle} onChange={(e) => setVehicle(e.target.value)} required>
-                    <option value="">Select Vehicle</option>
-                    {vehicles.map((v) => (
-                        <option key={v.id} value={v.id}>{v.model} ({v.license_plate})</option>
-                    ))}
-                </select>
-            </div>
-            <div>
-                <label>Component:</label>
-                <select value={component} onChange={(e) => setComponent(e.target.value)} required>
-                    <option value="">Select Component</option>
-                    {components.length ? (
-                        components.map((c) => (
-                            <option key={c.id} value={c.id}>{c.name}</option>
-                        ))
-                    ) : (
-                        <option value="">No components available</option>
-                    )}
-                </select>
-            </div>
-            <div>
-                <label>Description:</label>
-                <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
-            </div>
-            <div>
-                <label>Repair Price:</label>
-                <input type="number" value={repairPrice} onChange={(e) => setRepairPrice(e.target.value)} />
-            </div>
-            <div>
-                <label>Repair:</label>
-                <input type="checkbox" checked={isRepair} onChange={(e) => setIsRepair(e.target.checked)} />
-            </div>
-            <button type="submit">Submit</button>
-            {message && <p>{message}</p>}
-        </form>
+        <div style={formStyle}>
+            <form onSubmit={handleSubmit} style={{ width: '300px', textAlign: 'center' }}>
+                <h2>Register Issue</h2>
+                <div>
+                    <label style={labelStyle}>Vehicle:</label>
+                    <select value={vehicle} onChange={(e) => setVehicle(e.target.value)} required style={inputStyle}>
+                        <option value="">Select Vehicle</option>
+                        {vehicles.map((v) => (
+                            <option key={v.id} value={v.id} style={{ color: 'black' }}>
+                                {v.model} ({v.license_plate})
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label style={labelStyle}>Component:</label>
+                    <select value={component} onChange={(e) => setComponent(e.target.value)} required style={inputStyle}>
+                        <option value="">Select Component</option>
+                        {components.map((c) => (
+                            <option key={c.id} value={c.id} style={{ color: 'black !important' }}>
+                                {c.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label style={labelStyle}>Description:</label>
+                    <textarea value={description} onChange={(e) => setDescription(e.target.value)} required style={decStyle} />
+                </div>
+                <div>
+                    <label style={labelStyle}>Repair Price:</label>
+                    <input type="number" value={repairPrice} onChange={(e) => setRepairPrice(e.target.value)} style={inputStyle} />
+                </div>
+                <div>
+                    <label style={labelStyle}>Repair:</label>
+                    <input type="checkbox" checked={isRepair} onChange={(e) => setIsRepair(e.target.checked)} style={inputStyle} />
+                </div>
+                <button type="submit" style={inputStyle}>Submit</button>
+                {message && <p>{message}</p>}
+            </form>
+        </div>
     );
 };
 

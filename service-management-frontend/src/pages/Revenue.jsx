@@ -11,12 +11,20 @@ import RevenueBarChart from '../components/RevenueBarChart';
 //         <RevenueChart period="yearly" />
 //     </div>
 // );
-
+const headingStyle = {
+    marginLeft:'30rem'
+};
+const heStyle = {
+    marginLeft:'40rem'
+};
 const Revenue = () => (
     <div>
-        <h1>Revenue Dashboard</h1>
+        <h1 style={headingStyle}>Revenue Dashboard</h1>
+        <h2 style={heStyle}>Daily</h2>
         <RevenueBarChart period="daily" />
+        <h2 style={heStyle}>Monthly</h2>
         <RevenueBarChart period="monthly" />
+        <h2 style={heStyle}>Yearly</h2>
         <RevenueBarChart period="yearly" />
     </div>
 );

@@ -20,24 +20,47 @@ const VehicleForm = () => {
         }
     };
 
+    const formStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        marginTop: '-10rem',
+        marginLeft:"30rem"
+    };
+
+    const inputStyle = {
+        margin: '10px 0',
+        color:'black !important',
+        padding:'0.3rem'
+    };
+
+    const labelStyle = {
+        padding:'0.3rem'
+
+    };
+
     return (
+        <div style={formStyle}>
         <form onSubmit={handleSubmit}>
             <h2>Register Vehicle</h2>
             <div>
-                <label>License Plate:</label>
-                <input type="text" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} required />
+                <label style={labelStyle}>License Plate:</label>
+                <input type="text" value={licensePlate} onChange={(e) => setLicensePlate(e.target.value)} required style={inputStyle}/>
             </div>
             <div>
-                <label>Vehicle Model:</label>
-                <input type="text" value={vehicle_model} onChange={(e) => setModel(e.target.value)} required />
+                <label style={labelStyle}>Vehicle Model:</label>
+                <input type="text" value={vehicle_model} onChange={(e) => setModel(e.target.value)} required style={inputStyle}/>
             </div>
             <div>
-                <label>Vehicle Owner:</label>
-                <input type="text" value={vehicle_owner} onChange={(e) => setOwner(e.target.value)} required />
+                <label style={labelStyle}>Vehicle Owner:</label>
+                <input type="text" value={vehicle_owner} onChange={(e) => setOwner(e.target.value)} required style={inputStyle}/>
             </div>
             <button type="submit">Submit</button>
             {message && <p>{message}</p>}
         </form>
+        </div>
     );
 };
 

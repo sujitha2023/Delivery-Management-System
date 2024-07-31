@@ -1,10 +1,12 @@
 import React from 'react';
 import ComponentForm from '../components/ComponentForm';
-
+const headingStyle = {
+    marginLeft:'35rem'
+};
 const Components = () => {
     return (
         <div>
-            <h2>Components</h2>
+            <h2 style={headingStyle}>Components</h2>
             <ComponentForm />
         </div>
     );
