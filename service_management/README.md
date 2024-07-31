@@ -20,3 +20,7 @@ For DB migrations -
 To Run the Django Application -
 
 - python manage.py runserver
+
+To run testcases-
+
+- python manage.py test
