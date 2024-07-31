@@ -1,4 +1,4 @@
-# vehicle-service-system
+# Delivery management system
 
 # Backend : Django
 
@@ -31,7 +31,7 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
+- cd service_management_frontend
 - npm install/npm i
 - npm run dev
 
