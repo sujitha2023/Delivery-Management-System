@@ -52,4 +52,8 @@ To run testcases-
 
 - npm test
 
+Note : 
+
+- Document is attached with required screenshots of all the pages
+
 
